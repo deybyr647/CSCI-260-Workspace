@@ -1,5 +1,4 @@
-package introAndReview.Bag;
-import java.util.Iterator;
+package Prog1_Bag_ADT;
 
 /**
  * @author psychocoder

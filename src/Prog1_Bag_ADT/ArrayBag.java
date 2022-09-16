@@ -1,6 +1,12 @@
-package introAndReview.Bag;
+package Prog1_Bag_ADT;
 
 import java.util.Arrays;
+
+/*
+    Deyby Rodriguez
+    Data Structures
+    CSCI 260 M01
+*/
 
 public class ArrayBag implements Bag {
     private final Object[] items;
