@@ -1,3 +1,6 @@
 # IntelliJ & Output Folder
 .idea/
 out/
+
+# Miscellaneous
+.DS_Store

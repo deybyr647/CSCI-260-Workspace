@@ -27,18 +27,19 @@ class MkHighArrayTester {
         arr.display();                // display items
 
         int searchKey = 35;           // search for item
-        if(arr.find(searchKey) != -1)
+        if(arr.find(searchKey) != -1) {
             System.out.println("Found " + searchKey);
-        else
+        } else {
             System.out.println("Can't find " + searchKey);
+        }
 
         System.out.println("Deleting 00, 55, 15");
         arr.delete(00);               // delete 3 items
         arr.delete(55);
-        arr.delete(15);//arr.delete(99);
+        arr.delete(15); //arr.delete(99);
 
         arr.display();                // display items again
-        System.out.println("\ngetMax() returned "+arr.getMax());
+        System.out.println("\ngetMax() returned " + arr.getMax());
         arr.removeMax();
         System.out.println("\nAfter calling removeMax()");
         arr.display();
