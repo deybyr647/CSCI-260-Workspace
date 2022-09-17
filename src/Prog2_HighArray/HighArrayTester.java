@@ -7,7 +7,7 @@ package Prog2_HighArray;
     CSCI 260 M01
 */
 
-class MkHighArrayTester {
+public class HighArrayTester {
 
     public static void main(String[] args) {
         int maxSize = 100;            // array size
@@ -71,5 +71,5 @@ class MkHighArrayTester {
 
         return sortedArr;
     }
-    
+
 }  // end class HighArrayApp
