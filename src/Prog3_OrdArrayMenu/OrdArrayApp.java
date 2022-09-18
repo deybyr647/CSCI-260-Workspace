@@ -1,11 +1,18 @@
 package Prog3_OrdArrayMenu;
 
+/*
+    Deyby Rodriguez
+    1291202
+    Data Structures
+    CSCI 260 M01
+*/
+
 import java.util.Scanner;
 
 public class OrdArrayApp {
     public static void main(String[] args) {
-        OrdArray numArr = new OrdArray();
-        handleUserInput(numArr);
+        OrdArray orderedArray = new OrdArray();
+        handleUserInput(orderedArray);
     }
 
     static void handleUserInput(OrdArray arr) {
@@ -23,6 +30,7 @@ public class OrdArrayApp {
         }
 
         switch (userChoice) {
+            // 1. Fill Array
             case 1 -> {
                 System.out.print("Enter number of elements 1-10: ");
                 int fillAmount = inputHandler.nextInt();
@@ -30,11 +38,13 @@ public class OrdArrayApp {
                 handleUserInput(arr);
             }
 
+            // 2. Add Number
             case 2 -> {
                 arr.insert();
                 handleUserInput(arr);
             }
 
+            // 3. Find the index of a number
             case 3 -> {
                 System.out.print("Enter number to find: ");
                 int num = inputHandler.nextInt();
@@ -42,6 +52,7 @@ public class OrdArrayApp {
                 handleUserInput(arr);
             }
 
+            // 4. Remove number at index
             case 4 -> {
                 System.out.print("Enter index 0-9: ");
                 int index = inputHandler.nextInt();
@@ -55,17 +66,20 @@ public class OrdArrayApp {
                 handleUserInput(arr);
             }
 
+            // 5. Remove number
             case 5 -> {
                 System.out.print("Enter number to remove: ");
-                int number = inputHandler.nextInt();
-                arr.removeNumber(number, false);
+                int num = inputHandler.nextInt();
+                arr.removeNumber(num);
                 handleUserInput(arr);
             }
 
+            //6. Quit
             case 6 -> {
                 return;
             }
 
+            // Handles improper user input
             default -> {
                 System.out.print("Please re-enter 1-6: ");
                 int retryChoice = inputHandler.nextInt();

@@ -1,6 +1,11 @@
 package Prog3_OrdArrayMenu;
 
-import java.util.Arrays;
+/*
+    Deyby Rodriguez
+    1291202
+    Data Structures
+    CSCI 260 M01
+*/
 
 public class OrdArray {
     private final int[] collection;
@@ -20,7 +25,7 @@ public class OrdArray {
         elementCount = amount;
 
         for(int i = 0; i < elementCount; i++) {
-            int randomNumber = getRandomNumber(1, 99);
+            int randomNumber = getRandomNumber();
             collection[i] = randomNumber;
         }
 
@@ -38,9 +43,10 @@ public class OrdArray {
             return -1;
         }
 
-        int newNumber = getRandomNumber(1, 99);
+        int newNumber = getRandomNumber();
         collection[elementCount] = newNumber;
         elementCount++;
+        ascendingSort();
         display();
 
         return newNumber;
@@ -90,8 +96,8 @@ public class OrdArray {
     }
 
     // 5. Remove number
-    public int removeNumber(int num, boolean isVerbose) {
-        int indexOfNum = find(num, isVerbose);
+    public int removeNumber(int num) {
+        int indexOfNum = find(num, false);
 
         if(indexOfNum == -1) {
             System.out.println(num + " is not found");
@@ -101,8 +107,17 @@ public class OrdArray {
         return removeNumberAtIndex(indexOfNum);
     }
 
-    private int getRandomNumber(int min, int max) {
-        return (int) (Math.floor(Math.random() * (max - min + 1)) + min);
+    // Helper Methods
+    public int[] getCollection() {
+        return collection;
+    }
+
+    public int getElementCount(){
+        return elementCount;
+    }
+
+    private int getRandomNumber() {
+        return (int) (Math.floor(Math.random() * (99)) + 1);
     }
 
     private void ascendingSort() {
@@ -131,13 +146,5 @@ public class OrdArray {
         System.out.println(elementString);
 
         return elementString;
-    }
-
-    public int[] toArray() {
-        return Arrays.copyOf(collection, elementCount);
-    }
-
-    public int getElementCount(){
-        return elementCount;
     }
 }
