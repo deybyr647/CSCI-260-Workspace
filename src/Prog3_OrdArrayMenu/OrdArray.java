@@ -27,6 +27,8 @@ public class OrdArray {
         if(elementCount > 1) {
             ascendingSort();
         }
+
+        display();
     }
 
     // 2. Add Number
@@ -39,6 +41,7 @@ public class OrdArray {
         int newNumber = getRandomNumber(1, 99);
         collection[elementCount] = newNumber;
         elementCount++;
+        display();
 
         return newNumber;
     }
@@ -60,6 +63,7 @@ public class OrdArray {
     // 4. Remove number at index
     public int removeNumberAtIndex(int index) {
         if(index < 0 || index >= elementCount){
+            display();
             return -1;
         }
 
@@ -72,6 +76,7 @@ public class OrdArray {
         }
 
         elementCount--;
+        display();
 
         return itemAtIndex;
     }
@@ -103,6 +108,20 @@ public class OrdArray {
                 }
             }
         }
+    }
+
+    private StringBuilder display() {
+        StringBuilder elementString = new StringBuilder();
+        elementString.append("\n");
+
+        for(int i = 0; i < elementCount; i++){
+            elementString.append(collection[i]);
+            elementString.append(" ");
+        }
+
+        System.out.println(elementString);
+
+        return elementString;
     }
 
     public int[] toArray() {
