@@ -1,6 +1,5 @@
 package Prog3_OrdArrayMenu;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class OrdArrayApp {
@@ -10,12 +9,18 @@ public class OrdArrayApp {
     }
 
     static void handleUserInput(OrdArray arr) {
-        Scanner inputHandler = new Scanner(System.in);
+        handleUserInput(arr, 0);
+    }
 
-        displayMenu();
-        System.out.print("Enter your choice 1-6: ");
-        //System.out.println();
-        int userChoice = inputHandler.nextInt();
+    static void handleUserInput(OrdArray arr, int choice) {
+        Scanner inputHandler = new Scanner(System.in);
+        int userChoice = choice;
+
+        if(userChoice == 0) {
+            displayMenu();
+            System.out.print("Enter your choice 1-6: ");
+            userChoice = inputHandler.nextInt();
+        }
 
         switch (userChoice) {
             case 1 -> {
@@ -24,22 +29,19 @@ public class OrdArrayApp {
                 arr.fill(fillAmount);
                 handleUserInput(arr);
             }
+
             case 2 -> {
                 arr.insert();
                 handleUserInput(arr);
             }
+
             case 3 -> {
+                System.out.print("Enter number to find: ");
                 int num = inputHandler.nextInt();
-                int indexOfNum = arr.find(num);
-
-                if(indexOfNum == -1) {
-                    System.out.println(num + " is not found");
-                } else {
-                    System.out.println(num + " found at index " + indexOfNum);
-                }
-
+                arr.find(num, true);
                 handleUserInput(arr);
             }
+
             case 4 -> {
                 System.out.print("Enter index 0-9: ");
                 int index = inputHandler.nextInt();
@@ -52,16 +54,22 @@ public class OrdArrayApp {
                 arr.removeNumberAtIndex(index);
                 handleUserInput(arr);
             }
+
             case 5 -> {
+                System.out.print("Enter number to remove: ");
                 int number = inputHandler.nextInt();
-                arr.removeNumber(number);
-                break;
+                arr.removeNumber(number, false);
+                handleUserInput(arr);
             }
+
             case 6 -> {
                 return;
             }
+
             default -> {
-                break;
+                System.out.print("Please re-enter 1-6: ");
+                int retryChoice = inputHandler.nextInt();
+                handleUserInput(arr, retryChoice);
             }
         }
     }

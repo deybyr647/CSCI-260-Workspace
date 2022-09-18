@@ -19,7 +19,7 @@ public class OrdArray {
 
         elementCount = amount;
 
-        for(int i = 0; i < elementCount; i++){
+        for(int i = 0; i < elementCount; i++) {
             int randomNumber = getRandomNumber(1, 99);
             collection[i] = randomNumber;
         }
@@ -47,14 +47,24 @@ public class OrdArray {
     }
 
     // 3. Find the index of a number
-    public int find(int num) {
+    public int find(int num, boolean isVerbose) {
         int index = -1;
 
-        for(int i = 0; i < elementCount; i++){
-            if(collection[i] == num){
+        for(int i = 0; i < elementCount; i++) {
+            if(collection[i] == num) {
                 index = i;
                 break;
             }
+        }
+
+        if(isVerbose) {
+            if(index == -1) {
+                System.out.println(num + " is not found");
+            } else {
+                System.out.println(num + " found at index " + index);
+            }
+
+            display();
         }
 
         return index;
@@ -62,14 +72,12 @@ public class OrdArray {
 
     // 4. Remove number at index
     public int removeNumberAtIndex(int index) {
-        if(index < 0 || index >= elementCount){
+        if(index < 0 || index >= elementCount) {
             display();
             return -1;
         }
 
         int itemAtIndex = collection[index];
-        System.out.println("Index: " + index);
-        System.out.println("Item at index: " + itemAtIndex);
 
         for(int i = index; i < elementCount - 1; i++) {
             collection[i] = collection[i + 1];
@@ -82,10 +90,11 @@ public class OrdArray {
     }
 
     // 5. Remove number
-    public int removeNumber(int num) {
-        int indexOfNum = find(num);
+    public int removeNumber(int num, boolean isVerbose) {
+        int indexOfNum = find(num, isVerbose);
 
-        if(indexOfNum == -1){
+        if(indexOfNum == -1) {
+            System.out.println(num + " is not found");
             return -1;
         }
 
@@ -99,9 +108,9 @@ public class OrdArray {
     private void ascendingSort() {
         int temp;
 
-        for(int i = 0; i < elementCount; i++){
-            for(int j = i + 1; j < elementCount; j++){
-                if(collection[i] > collection[j]){
+        for(int i = 0; i < elementCount; i++) {
+            for(int j = i + 1; j < elementCount; j++) {
+                if(collection[i] > collection[j]) {
                     temp = collection[i];
                     collection[i] = collection[j];
                     collection[j] = temp;
@@ -114,7 +123,7 @@ public class OrdArray {
         StringBuilder elementString = new StringBuilder();
         elementString.append("\n");
 
-        for(int i = 0; i < elementCount; i++){
+        for(int i = 0; i < elementCount; i++) {
             elementString.append(collection[i]);
             elementString.append(" ");
         }
