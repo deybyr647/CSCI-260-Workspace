@@ -1,4 +1,4 @@
-package SearchAlgorithms;
+package Algorithms;
 
 public class SearchAlgorithms {
     public static void main(String[] args){
