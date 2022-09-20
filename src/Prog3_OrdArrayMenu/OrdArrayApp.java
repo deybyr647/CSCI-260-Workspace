@@ -31,60 +31,57 @@ public class OrdArrayApp {
 
         switch (userChoice) {
             // 1. Fill Array
-            case 1 -> {
+            case 1:
                 System.out.print("Enter number of elements 1-10: ");
                 int fillAmount = inputHandler.nextInt();
                 arr.fill(fillAmount);
                 handleUserInput(arr);
-            }
+                break;
 
             // 2. Add Number
-            case 2 -> {
+            case 2:
                 arr.insert();
                 handleUserInput(arr);
-            }
+                break;
 
             // 3. Find the index of a number
-            case 3 -> {
+            case 3:
                 System.out.print("Enter number to find: ");
                 int numToFind = inputHandler.nextInt();
                 arr.find(numToFind, true);
                 handleUserInput(arr);
-            }
+                break;
 
             // 4. Remove number at index
-            case 4 -> {
+            case 4:
                 System.out.print("Enter index 0-9: ");
                 int index = inputHandler.nextInt();
-
-                if(index < 0 || index > 9) {
+                if (index < 0 || index > 9) {
                     System.out.print("Please re-enter 0-9: ");
                     index = inputHandler.nextInt();
                 }
-
                 arr.removeNumberAtIndex(index);
                 handleUserInput(arr);
-            }
+                break;
 
             // 5. Remove number
-            case 5 -> {
+            case 5:
                 System.out.print("Enter number to remove: ");
                 int numToRemove = inputHandler.nextInt();
                 arr.removeNumber(numToRemove);
                 handleUserInput(arr);
-            }
+                break;
 
-            //6. Quit
-            case 6 -> {
+            // 6. Quit
+            case 6:
                 return;
-            }
 
             // Handles improper user input
-            default -> {
+            default:
                 System.out.print("Please re-enter 1-6: ");
                 int retryChoice = inputHandler.nextInt();
                 handleUserInput(arr, retryChoice);
-            }
+                break;
         }
     }
 
