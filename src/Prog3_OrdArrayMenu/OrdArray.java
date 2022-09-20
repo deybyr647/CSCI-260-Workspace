@@ -101,6 +101,7 @@ public class OrdArray {
 
         if(indexOfNum == -1) {
             System.out.println(num + " is not found");
+            display();
             return -1;
         }
 
