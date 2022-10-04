@@ -1,4 +1,4 @@
-package Prog4_1A_DecimalToBinary_WithStack;
+package Prog4_1A_Stack;
 
 public class StackTest {
     public static void main(String[] args) {
