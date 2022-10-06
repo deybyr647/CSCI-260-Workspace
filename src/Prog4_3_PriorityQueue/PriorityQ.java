@@ -7,7 +7,7 @@ package Prog4_3_PriorityQueue;
     CSCI 260 M01
 */
 
-class PriorityQ {
+public class PriorityQ {
     private final int maxSize;
     private final CustomerOrder[] queueArray;
     private int nItems;
