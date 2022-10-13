@@ -1,9 +1,14 @@
 package Prog5_2A_FirstLastList;
 
-class FirstLastAppTest
-{
-    public static void main(String[] args)
-    {
+/*
+    Deyby Rodriguez
+    1291202
+    Data Structures
+    CSCI 260 M01
+*/
+
+class FirstLastAppTest {
+    public static void main(String[] args) {
         FirstLastList lst1 = new FirstLastList();                // Start a new FirstLastList called lst1
         lst1.insertLast(1);                                      // Add links with data to the last position
         lst1.insertLast(3);
@@ -29,5 +34,5 @@ class FirstLastAppTest
         lst1.swap();                                             // call the swap method for lst1
         System.out.print("\nlst1: ");                           // print the description for the list
         lst1.displayList();                                      // print the contents of the list lst1; post swap()
-    }  // end main()
-}  // end class
+    }
+}

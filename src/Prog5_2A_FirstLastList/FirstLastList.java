@@ -1,5 +1,12 @@
 package Prog5_2A_FirstLastList;
 
+/*
+    Deyby Rodriguez
+    1291202
+    Data Structures
+    CSCI 260 M01
+*/
+
 public class FirstLastList {
     private Link first;
     private Link last;
