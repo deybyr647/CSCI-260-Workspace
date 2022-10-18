@@ -84,6 +84,7 @@ public class LinkList {
                 current = current.next;
             }
         }
+
         if(current == first) {
             first = first.next;
         }
