@@ -1,11 +1,4 @@
-package Prog5_2B_PriorityQueueDLL;
-
-/*
-    Deyby Rodriguez
-    1291202
-    Data Structures
-    CSCI 260 M01
-*/
+package Rotate;
 
 public class Link_D {
     public long dData;
