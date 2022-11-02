@@ -1,4 +1,4 @@
-package Prog6_Recursion;
+package Prog6_1_Recursion;
 
 /*
     Deyby Rodriguez
